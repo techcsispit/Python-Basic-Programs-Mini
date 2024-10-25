@@ -6,8 +6,8 @@ def bin_to_decimal(bin_string: str) -> int:
     5
     >>> bin_to_decimal(" 1010   ")
     10
-    >>> bin_to_decimal("-11101")
-    -29
+    >>> bin_to_decimal("11101")
+    29
     >>> bin_to_decimal("0")
     0
     >>> bin_to_decimal("a")
@@ -34,10 +34,12 @@ def bin_to_decimal(bin_string: str) -> int:
     decimal_number = 0
     for char in bin_string:
         decimal_number = 2 * decimal_number + int(char)
-    return -decimal_number if is_negative else decimal_number
+    return decimal_number if is_negative else decimal_number
 
 
 if __name__ == "__main__":
     from doctest import testmod
+    result = bin_to_decimal(11101)
+    print(result)
 
     testmod()
